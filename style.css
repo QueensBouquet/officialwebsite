@@ -319,9 +319,17 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
 
 @media (max-width: 560px) {
   body { line-height: 1.8; }
-  .hero { overflow-x: auto; scrollbar-width: none; }
-  .hero::-webkit-scrollbar { display: none; }
-  .hero img { width: 820px; max-width: none; }
+
+  /* スマホではメインバナー全体を画面幅に収めて表示 */
+  .hero { overflow: hidden; }
+  .hero img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
   .section-shell { width: min(100% - 28px, 1180px); }
 
   .intro { padding-block: 70px; gap: 48px; }
@@ -329,7 +337,6 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
   .intro-actions .button { width: 100%; }
   .decor { opacity: .82; }
 
-  
   .shop-info { padding-block: 70px; }
   .info-card { padding: 30px 22px; }
   .info-actions { grid-template-columns: 1fr; }
