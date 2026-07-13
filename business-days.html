@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Queen’s Bouquetの営業日のご案内。土曜日は店頭販売、金曜・日曜はオンライン予約商品のお受け渡し日です。">
+  <title>営業日のご案内｜Queen’s Bouquet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html#home" aria-label="Queen's Bouquet ホーム">
+      <img src="assets/logo.png" alt="Queen's Bouquet ロゴ">
+      <span>Queen’s Bouquet</span>
+    </a>
+    <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="main-nav" aria-label="メインメニュー">
+      <a href="index.html#home">ホーム</a>
+      <a href="business-days.html" aria-current="page">営業日</a>
+      <a href="reservation.html">お取り置き</a>
+      <a href="https://queens-bouquet.take-eats.jp/" target="_blank" rel="noopener">オンライン予約</a>
+      <a href="https://queensbouquet.stores.jp/" target="_blank" rel="noopener">オンラインストア</a>
+      <a href="https://www.instagram.com/queens__bouquet/" target="_blank" rel="noopener">Instagram</a>
+      <a href="index.html#fortune">占い</a>
+    </nav>
+  </header>
+
+  <main class="business-page">
+    <section class="business-hero section-shell reveal">
+      <p class="eyebrow">Opening Days</p>
+      <h1>営業日のご案内</h1>
+      <p class="business-lead">Queen’s Bouquet（クイーンズブーケ）では、<br>曜日ごとに営業スタイルを変えて営業しています。</p>
+      <div class="business-overview">
+        <p><strong>土曜日</strong><span>店頭販売日　11:00〜17:00</span></p>
+        <p><strong>金曜・日曜</strong><span>オンライン予約商品の受け渡し日</span></p>
+      </div>
+    </section>
+
+    <section class="business-cards section-shell">
+      <article class="business-card reveal">
+        <p class="business-day">SATURDAY</p>
+        <h2>土曜日</h2>
+        <p class="business-time">11:00〜17:00</p>
+        <p class="business-type">店頭販売日</p>
+        <p class="business-copy">ご予約なしで、そのままご来店いただけます。<br>焼きたてのお菓子をご用意してお待ちしております。</p>
+      </article>
+
+      <article class="business-card reveal">
+        <p class="business-day">FRIDAY / SUNDAY</p>
+        <h2>金曜・日曜</h2>
+        <p class="business-time business-time-small">オンライン予約商品
+        <br>受け渡し日</p>
+        <p class="business-type">事前予約制</p>
+        <p class="business-copy">オンライン予約商品のお受け取り日です。<br>ご予約は下記ページから承ります。</p>
+        <a class="button" href="https://queens-bouquet.take-eats.jp/" target="_blank" rel="noopener">オンライン予約</a>
+      </article>
+    </section>
+
+    <section class="business-note section-shell reveal">
+      <p class="business-note-title">営業日・営業時間は変更となる場合がございます。</p>
+      <p>最新情報はInstagramプロフィールをご確認ください。</p>
+      <a class="button button-secondary" href="https://www.instagram.com/queens__bouquet/" target="_blank" rel="noopener">Instagramを見る</a>
+    </section>
+
+    <div class="back-home section-shell">
+      <a href="index.html#home">ホームに戻る</a>
+    </div>
+  </main>
+
+  <footer>
+    <img src="assets/logo.png" alt="" aria-hidden="true">
+    <p>Queen’s Bouquet</p>
+    <p class="footer-small">British baked sweets in Mobara, Chiba.</p>
+    <p class="copyright">© <span id="year"></span> Queen’s Bouquet</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
