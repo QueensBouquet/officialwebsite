@@ -563,3 +563,9 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
   .product-row { grid-template-columns: 1fr 105px; gap: 14px; }
   .hold-form { padding: 28px 20px; }
 }
+/* スマホでは占い見出しに重なる右側の花を非表示 */
+@media (max-width: 560px) {
+  .fortune-section .fi-16 {
+    display: none !important;
+  }
+}
