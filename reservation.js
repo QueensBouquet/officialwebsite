@@ -16,7 +16,7 @@
 
   productSelects.forEach(select => {
     const isSoldOut = soldOut[select.dataset.product];
-    for (let i = 0; i <= 6; i += 1) {
+    for (let i = 0; i <= 4; i += 1) {
       const option = document.createElement('option');
       option.value = String(i);
       option.textContent = isSoldOut && i > 0 ? `${i}（受付終了）` : String(i);
