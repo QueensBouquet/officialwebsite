@@ -3,27 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Queen’s Bouquet 土曜日店頭販売のお取り置きフォームです。金曜日12時まで受け付けています。">
+  <meta
+    name="description"
+    content="Queen’s Bouquet 土曜日店頭販売のお取り置きフォームです。金曜日12時まで受け付けています。"
+  >
   <title>土曜日のお取り置き｜Queen’s Bouquet</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header class="site-header">
     <a class="brand" href="index.html#home" aria-label="Queen's Bouquet ホーム">
       <img src="assets/logo.png" alt="Queen's Bouquet ロゴ">
       <span>Queen’s Bouquet</span>
     </a>
-    <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="メニューを開く"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <nav class="main-nav" aria-label="メインメニュー">
       <a href="index.html#home">ホーム</a>
       <a href="business-days.html">営業日</a>
       <a href="reservation.html" aria-current="page">お取り置き</a>
-      <a href="https://queens-bouquet.take-eats.jp/" target="_blank" rel="noopener">オンライン予約</a>
-      <a href="https://queensbouquet.stores.jp/" target="_blank" rel="noopener">オンラインストア</a>
-      <a href="https://www.instagram.com/queens__bouquet/" target="_blank" rel="noopener">Instagram</a>
+      <a
+        href="https://queens-bouquet.take-eats.jp/"
+        target="_blank"
+        rel="noopener"
+      >
+        オンライン予約
+      </a>
+      <a
+        href="https://queensbouquet.stores.jp/"
+        target="_blank"
+        rel="noopener"
+      >
+        オンラインストア
+      </a>
+      <a
+        href="https://www.instagram.com/queens__bouquet/"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram
+      </a>
       <a href="index.html#fortune">占い</a>
     </nav>
   </header>
@@ -31,55 +68,164 @@
   <main class="reservation-page">
     <section class="reservation-intro section-shell reveal">
       <p class="eyebrow">Saturday Hold Request</p>
+
       <h1>土曜日のお取り置きについて</h1>
-      <p>土曜日の店頭販売では、お取り置きを承っております。</p>
-      <p>お取り置きをご希望の方は、<strong>金曜日の12:00まで</strong>に下記フォームからお申し込みください。</p>
+
+      <p>
+        土曜日の店頭販売では、お取り置きを承っております。
+      </p>
+
+      <p>
+        お取り置きをご希望の方は、
+        <strong>金曜日の12:00まで</strong>に
+        下記フォームからお申し込みください。
+      </p>
+
       <div class="reservation-summary">
-        <p><strong>対象商品</strong><br>プレーンスコーン／レモンドリズルケーキ／フルーツスコーン</p>
-        <p><strong>個数</strong><br>おひとり様、各商品4個まで</p>
+        <p>
+          <strong>対象商品</strong><br>
+          プレーンスコーン／レモンドリズルケーキ／フルーツスコーン
+        </p>
+
+        <p>
+          <strong>個数</strong><br>
+          おひとり様、各商品4個まで
+        </p>
       </div>
-      <p class="reservation-important">こちらからの返信をもって、お取り置き完了となります。</p>
-      <p>数に限りがございますので、ご希望数をご用意できない場合は、先着順で個数を調整させていただくことがございます。</p>
+
+      <p class="reservation-important">
+        こちらからの返信をもって、お取り置き完了となります。
+      </p>
+
+      <p>
+        数に限りがございますので、ご希望数をご用意できない場合は、
+        先着順で個数を調整させていただくことがございます。
+      </p>
     </section>
 
     <section class="reservation-form-wrap section-shell reveal">
-      <div id="reservation-status" class="reservation-status" role="status" aria-live="polite"></div>
+      <div
+        id="reservation-status"
+        class="reservation-status"
+        role="status"
+        aria-live="polite"
+      ></div>
 
-      <form id="hold-form" class="hold-form" action="https://formsubmit.co/queensbouquet.info@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="【Queen’s Bouquet】土曜日のお取り置き申し込み">
+      <form
+        id="hold-form"
+        class="hold-form"
+        action="https://formsubmit.co/queensbouquet.info@gmail.com"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="_subject"
+          value="【Queen’s Bouquet】土曜日のお取り置き申し込み"
+        >
+
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+
+        <input
+          type="text"
+          name="_honey"
+          class="honeypot"
+          tabindex="-1"
+          autocomplete="off"
+        >
 
         <div class="form-field">
-          <label for="customer-name">お名前 <span>必須</span></label>
-          <p class="field-note">ニックネームでも構いません。</p>
-          <input id="customer-name" name="お名前" type="text" required maxlength="60" autocomplete="name">
+          <label for="customer-name">
+            お名前 <span>必須</span>
+          </label>
+
+          <p class="field-note">
+            ニックネームでも構いません。
+          </p>
+
+          <input
+            id="customer-name"
+            name="お名前"
+            type="text"
+            required
+            maxlength="60"
+            autocomplete="name"
+          >
         </div>
 
         <div class="form-grid-two">
           <div class="form-field contact-field">
-            <label for="phone">お電話番号 <span>必須</span></label>
-            <p class="field-note field-note-spacer" aria-hidden="true">&nbsp;</p>
-            <input id="phone" name="お電話番号" type="tel" required maxlength="20" inputmode="tel" autocomplete="tel" placeholder="090-1234-5678">
+            <label for="phone">
+              お電話番号 <span>必須</span>
+            </label>
+
+            <p
+              class="field-note field-note-spacer"
+              aria-hidden="true"
+            >
+              &nbsp;
+            </p>
+
+            <input
+              id="phone"
+              name="お電話番号"
+              type="tel"
+              required
+              maxlength="20"
+              inputmode="tel"
+              autocomplete="tel"
+              placeholder="090-1234-5678"
+            >
           </div>
+
           <div class="form-field contact-field">
-            <label for="email">メールアドレス <span>必須</span></label>
-            <p class="field-note">完了の返信をお送りするため、正しくご入力ください。</p>
-            <input id="email" name="メールアドレス" type="email" required maxlength="120" autocomplete="email">
+            <label for="email">
+              メールアドレス <span>必須</span>
+            </label>
+
+            <p class="field-note">
+              完了の返信をお送りするため、正しくご入力ください。
+            </p>
+
+            <input
+              id="email"
+              name="メールアドレス"
+              type="email"
+              required
+              maxlength="120"
+              autocomplete="email"
+            >
           </div>
         </div>
 
         <fieldset class="product-fieldset">
-          <legend>ご希望の商品と個数 <span>必須</span></legend>
-          <p class="field-note">各商品0〜4個で選択してください。</p>
+          <legend>
+            ご希望の商品と個数 <span>必須</span>
+          </legend>
+
+          <p class="field-note">
+            各商品0〜4個で選択してください。
+          </p>
 
           <div class="product-row">
             <div>
               <strong>プレーンスコーン</strong>
               <small>おひとり様4個まで</small>
             </div>
-            <label><span class="sr-only">プレーンスコーン個数</span><select name="プレーンスコーン" data-product="plain" aria-label="プレーンスコーンの個数"></select><em>個</em></label>
+
+            <label>
+              <span class="sr-only">
+                プレーンスコーン個数
+              </span>
+
+              <select
+                name="プレーンスコーン"
+                data-product="plain"
+                aria-label="プレーンスコーンの個数"
+              ></select>
+
+              <em>個</em>
+            </label>
           </div>
 
           <div class="product-row">
@@ -87,7 +233,20 @@
               <strong>レモンドリズルケーキ</strong>
               <small>おひとり様4個まで</small>
             </div>
-            <label><span class="sr-only">レモンドリズルケーキ個数</span><select name="レモンドリズルケーキ" data-product="lemon" aria-label="レモンドリズルケーキの個数"></select><em>個</em></label>
+
+            <label>
+              <span class="sr-only">
+                レモンドリズルケーキ個数
+              </span>
+
+              <select
+                name="レモンドリズルケーキ"
+                data-product="lemon"
+                aria-label="レモンドリズルケーキの個数"
+              ></select>
+
+              <em>個</em>
+            </label>
           </div>
 
           <div class="product-row">
@@ -95,14 +254,41 @@
               <strong>フルーツスコーン</strong>
               <small>おひとり様4個まで</small>
             </div>
-            <label><span class="sr-only">フルーツスコーン個数</span><select name="フルーツスコーン" data-product="fruit" aria-label="フルーツスコーンの個数"></select><em>個</em></label>
+
+            <label>
+              <span class="sr-only">
+                フルーツスコーン個数
+              </span>
+
+              <select
+                name="フルーツスコーン"
+                data-product="fruit"
+                aria-label="フルーツスコーンの個数"
+              ></select>
+
+              <em>個</em>
+            </label>
           </div>
-          <p id="product-error" class="form-error" hidden>商品を1点以上お選びください。</p>
+
+          <p
+            id="product-error"
+            class="form-error"
+            hidden
+          >
+            商品を1点以上お選びください。
+          </p>
         </fieldset>
 
         <div class="form-field">
-          <label for="visit-time">ご来店時間の目安 <span>必須</span></label>
-          <select id="visit-time" name="ご来店時間の目安" required>
+          <label for="visit-time">
+            ご来店時間の目安 <span>必須</span>
+          </label>
+
+          <select
+            id="visit-time"
+            name="ご来店時間の目安"
+            required
+          >
             <option value="">選択してください</option>
             <option>11:00〜12:00頃</option>
             <option>12:00〜13:00頃</option>
@@ -114,31 +300,68 @@
         </div>
 
         <div class="form-field">
-          <label for="message">ご連絡事項 <small>任意</small></label>
-          <textarea id="message" name="ご連絡事項" rows="4" maxlength="500" placeholder="ご質問や連絡事項があればご入力ください。"></textarea>
+          <label for="message">
+            ご連絡事項 <small>任意</small>
+          </label>
+
+          <textarea
+            id="message"
+            name="ご連絡事項"
+            rows="4"
+            maxlength="500"
+            placeholder="ご質問や連絡事項があればご入力ください。"
+          ></textarea>
         </div>
 
         <label class="consent-row">
-          <input type="checkbox" required>
-          <span>入力内容を確認し、店舗からの返信をもってお取り置き完了となることに同意します。</span>
+          <input
+            id="consent-checkbox"
+            type="checkbox"
+            required
+          >
+
+          <span>
+            入力内容を確認し、店舗からの返信をもって
+            お取り置き完了となることに同意します。
+          </span>
         </label>
 
-        <button class="button reservation-submit" type="submit">お取り置きを申し込む</button>
-        <p class="submit-note">送信後、Queen’s Bouquetからの返信をお待ちください。自動的にお取り置き完了とはなりません。</p>
+        <button
+          class="button reservation-submit"
+          type="submit"
+          disabled
+        >
+          お取り置きを申し込む
+        </button>
+
+        <p class="submit-note">
+          送信後、Queen’s Bouquetからの返信をお待ちください。
+          自動的にお取り置き完了とはなりません。
+        </p>
       </form>
     </section>
 
     <div class="back-home section-shell">
-      <a href="index.html#home">ホームに戻る</a>
+      <a href="index.html#home">
+        ホームに戻る
+      </a>
     </div>
   </main>
 
   <footer>
-    <img src="assets/logo.png" alt="" aria-hidden="true">
+    <img
+      src="assets/logo.png"
+      alt=""
+      aria-hidden="true"
+    >
+
     <p>Queen’s Bouquet</p>
-    <p class="footer-small">British baked sweets in Mobara, Chiba.</p>
-    <p class="copyright">© <span id="year"></span> Queen’s Bouquet</p>
+
+    <p class="copyright">
+      © <span id="year"></span> Queen’s Bouquet
+    </p>
   </footer>
+
   <script src="script.js"></script>
   <script src="reservation.js"></script>
 </body>
