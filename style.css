@@ -1468,3 +1468,488 @@ business-days-final-aligned-style.css
     padding: 30px 20px;
   }
 }
+ライブラリ
+/
+business-days-card-fixed-style.css
+
+
+/* ========================================
+   営業日ページ 3カード最終調整
+   style.cssの一番下へ追加
+======================================== */
+
+.business-lead-one-line {
+  max-width: none;
+  white-space: nowrap;
+}
+
+.business-overview-three {
+  max-width: 760px;
+}
+
+.business-overview-three p {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  align-items: center;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.business-overview-three strong {
+  text-align: center;
+}
+
+.business-cards-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 1180px;
+  align-items: stretch;
+}
+
+.business-cards-three .business-card {
+  display: grid;
+  grid-template-rows: 230px 1fr auto;
+  min-height: 650px;
+  padding: clamp(30px, 3.4vw, 44px);
+  justify-content: initial;
+}
+
+.business-card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.business-card-top .business-day {
+  margin-bottom: 14px;
+}
+
+.business-card-top h2 {
+  margin-bottom: 22px;
+}
+
+.business-type-one-line {
+  margin: 0;
+  white-space: nowrap;
+  font-size: clamp(14px, 1.15vw, 17px);
+  line-height: 1.65;
+}
+
+.business-card-body {
+  display: grid;
+  grid-template-rows: 150px 34px 60px;
+  align-content: start;
+}
+
+.business-copy-fixed {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2px;
+  min-height: 150px;
+  margin: 0;
+  color: #6e4b3d;
+  font-size: 14px !important;
+  line-height: 1.85;
+  text-align: center;
+}
+
+.business-copy-fixed span {
+  display: block;
+}
+
+.business-deadline {
+  margin: 0;
+  align-self: start;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.business-attention {
+  min-height: 58px;
+  margin: 0;
+  padding: 13px 14px;
+  border-left: 3px solid var(--gold);
+  background: rgba(183, 131, 78, .08);
+  color: #694638;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.business-attention-placeholder {
+  visibility: hidden;
+}
+
+.business-card-footer {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.business-card-footer .button {
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+}
+
+.business-card-saturday {
+  border-color: rgba(183, 131, 78, .34);
+  box-shadow: 0 18px 42px rgba(76, 43, 26, .11);
+}
+
+.business-guide {
+  max-width: 1080px;
+  margin-top: 42px;
+  padding: clamp(34px, 6vw, 62px);
+  border: 1px solid rgba(116, 67, 34, .14);
+  background: rgba(255, 255, 255, .88);
+  text-align: center;
+  box-shadow: 0 14px 34px rgba(76, 43, 26, .07);
+}
+
+.business-guide-heading h2 {
+  margin-bottom: 30px;
+  font-size: clamp(29px, 4vw, 46px);
+}
+
+.business-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  text-align: left;
+}
+
+.business-guide-grid > div {
+  padding: 24px;
+  border: 1px solid rgba(116, 67, 34, .13);
+  background: rgba(183, 131, 78, .06);
+}
+
+.business-guide-grid strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--brown);
+  font-size: 17px;
+}
+
+.business-guide-grid p {
+  margin: 0;
+  color: #694638;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.business-guide-note {
+  margin: 24px 0 20px;
+  color: #765446;
+  font-size: 13px;
+}
+
+.business-guide > .button {
+  min-width: min(100%, 320px);
+}
+
+@media (max-width: 1050px) {
+  .business-lead-one-line {
+    white-space: normal;
+  }
+
+  .business-cards-three {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .business-cards-three .business-card {
+    grid-template-rows: auto auto auto;
+    min-height: auto;
+  }
+
+  .business-card-body {
+    grid-template-rows: auto auto auto;
+    gap: 18px;
+  }
+
+  .business-copy-fixed,
+  .business-attention {
+    min-height: 0;
+  }
+
+  .business-attention-placeholder {
+    display: none;
+  }
+
+  .business-type-one-line {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 700px) {
+  .business-overview-three p {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .business-guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-guide {
+    padding: 30px 20px;
+  }
+}
+ライブラリ
+/
+business-days-methods-style.css
+
+
+/* ========================================
+   営業日ページ：ネット予約・店頭販売表示
+   style.cssの一番下へ追加
+======================================== */
+
+.business-lead-one-line {
+  max-width: none;
+  white-space: nowrap;
+}
+
+.business-overview-three {
+  max-width: 760px;
+}
+
+.business-overview-three p {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  align-items: center;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.business-overview-three strong {
+  text-align: center;
+}
+
+.business-cards-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 1180px;
+  align-items: stretch;
+}
+
+.business-cards-three .business-card {
+  display: grid;
+  grid-template-rows: 230px 1fr auto;
+  min-height: 780px;
+  padding: clamp(30px, 3.4vw, 44px);
+  justify-content: initial;
+}
+
+.business-card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.business-card-top .business-day {
+  margin-bottom: 14px;
+}
+
+.business-card-top h2 {
+  margin-bottom: 22px;
+}
+
+.business-type-one-line {
+  margin: 0;
+  white-space: nowrap;
+  font-size: clamp(14px, 1.15vw, 17px);
+  line-height: 1.65;
+}
+
+.business-card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.business-method-block {
+  min-height: 190px;
+  padding: 22px 18px;
+  border: 1px solid rgba(116, 67, 34, .13);
+  background: rgba(183, 131, 78, .06);
+  text-align: left;
+}
+
+.business-method-block strong {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--brown);
+  font-size: 17px;
+}
+
+.business-method-block p {
+  margin: 0;
+  color: #6e4b3d;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.business-method-block p + p {
+  margin-top: 12px;
+}
+
+.business-method-store {
+  min-height: 190px;
+  margin-top: 14px;
+}
+
+.business-method-note {
+  font-size: 12px !important;
+  color: #7c6257 !important;
+}
+
+.business-deadline {
+  margin: 18px 0 0;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.business-attention {
+  min-height: 58px;
+  margin: 18px 0 0;
+  padding: 13px 14px;
+  border-left: 3px solid var(--gold);
+  background: rgba(183, 131, 78, .08);
+  color: #694638;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.business-attention-placeholder {
+  visibility: hidden;
+}
+
+.business-card-footer {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.business-card-footer .button {
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+}
+
+.business-card-saturday {
+  border-color: rgba(183, 131, 78, .34);
+  box-shadow: 0 18px 42px rgba(76, 43, 26, .11);
+}
+
+.business-guide {
+  max-width: 1080px;
+  margin-top: 42px;
+  padding: clamp(34px, 6vw, 62px);
+  border: 1px solid rgba(116, 67, 34, .14);
+  background: rgba(255, 255, 255, .88);
+  text-align: center;
+  box-shadow: 0 14px 34px rgba(76, 43, 26, .07);
+}
+
+.business-guide-heading h2 {
+  margin-bottom: 30px;
+  font-size: clamp(29px, 4vw, 46px);
+}
+
+.business-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  text-align: left;
+}
+
+.business-guide-grid > div {
+  padding: 24px;
+  border: 1px solid rgba(116, 67, 34, .13);
+  background: rgba(183, 131, 78, .06);
+}
+
+.business-guide-grid strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--brown);
+  font-size: 17px;
+}
+
+.business-guide-grid p {
+  margin: 0;
+  color: #694638;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.business-guide-note {
+  margin: 24px 0 20px;
+  color: #765446;
+  font-size: 13px;
+}
+
+.business-guide > .button {
+  min-width: min(100%, 320px);
+}
+
+@media (min-width: 1051px) {
+  .business-cards-three .business-card:not(.business-card-saturday)
+  .business-method-block {
+    min-height: 394px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .business-lead-one-line {
+    white-space: normal;
+  }
+
+  .business-cards-three {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .business-cards-three .business-card {
+    grid-template-rows: auto auto auto;
+    min-height: auto;
+  }
+
+  .business-method-block,
+  .business-method-store {
+    min-height: 0;
+  }
+
+  .business-attention-placeholder {
+    display: none;
+  }
+
+  .business-type-one-line {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 700px) {
+  .business-overview-three p {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .business-guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-guide {
+    padding: 30px 20px;
+  }
+}
