@@ -59,10 +59,7 @@
 
     <nav class="main-nav" aria-label="メインメニュー">
       <a href="index.html#home">ホーム</a>
-
-      <a href="business-days.html">
-        営業日
-      </a>
+      <a href="business-days.html">営業日</a>
 
       <a
         href="reservation.html"
@@ -123,7 +120,7 @@
 
       <div class="reservation-summary">
         <p>
-          <strong>対象商品</strong><br>
+          <strong>単品商品</strong><br>
           プレーンスコーン<br>
           レモンドリズルケーキ<br>
           フルーツスコーン
@@ -131,13 +128,13 @@
 
         <p>
           <strong>個数</strong><br>
-          通常商品は各4個まで<br>
-          土曜お取り置きセットは1セットまで
+          単品は各4個まで<br>
+          限定セットは1セットまで
         </p>
       </div>
 
       <p class="reservation-important">
-        こちらからの返信をもって、お取り置き完了となります。
+        店舗からの返信をもって、お取り置き完了となります。
       </p>
 
       <p>
@@ -174,8 +171,8 @@
 
         <input
           type="hidden"
-          name="_captcha"
-          value="false"
+          name="_autoresponse"
+          value="Queen’s Bouquetへお取り置きのお申し込みをいただき、ありがとうございます。このメールはお申し込み受付の自動返信です。現時点ではお取り置きは確定しておりません。店舗からの返信をもって、お取り置き完了となります。店舗からの返信をお待ちください。"
         >
 
         <input
@@ -186,77 +183,287 @@
           autocomplete="off"
         >
 
-        <div class="form-field">
-          <label for="customer-name">
-            お名前 <span>必須</span>
-          </label>
+        <!-- ① 土曜お取り置き限定セット -->
+        <fieldset class="product-fieldset set-fieldset">
+          <legend>
+            ① 土曜お取り置き限定セット
+          </legend>
 
-          <p class="field-note">
-            ニックネームでも構いません。
+          <div class="set-exclusive-note">
+            <strong>
+              土曜お取り置き限定の商品です
+            </strong>
+
+            <p>
+              店頭での通常販売は行っておりません。
+            </p>
+
+            <p>
+              こちらのフォームから事前にお取り置き予約を
+              いただいた場合のみ、ご購入いただけます。
+            </p>
+
+            <p>
+              おひとり様1セットまでです。
+            </p>
+          </div>
+
+          <p class="field-note set-intro-copy">
+            ご希望のセットを選んだあと、
+            セット内容をお選びください。
           </p>
 
-          <input
-            id="customer-name"
-            name="お名前"
-            type="text"
-            required
-            maxlength="60"
-            autocomplete="name"
+          <div class="set-list">
+            <article class="set-card">
+              <h2>
+                Queen’s Bouquet 6個セット
+                <span>2,800円</span>
+              </h2>
+
+              <p>
+                焼き菓子6個に、クロテッドクリーム1個と
+                ジャム1個が付いたおすすめセットです。
+              </p>
+
+              <ul>
+                <li>
+                  プレーンスコーン2個＋フルーツスコーン2個＋
+                  レモンドリズルケーキ2個
+                </li>
+
+                <li>
+                  プレーンスコーン4個＋
+                  レモンドリズルケーキ2個
+                </li>
+
+                <li>
+                  フルーツスコーン4個＋
+                  レモンドリズルケーキ2個
+                </li>
+              </ul>
+
+              <p class="set-saving">
+                通常価格2,920円のところ、
+                セット価格2,800円です。
+              </p>
+            </article>
+
+            <article class="set-card">
+              <h2>
+                スコーン4個セット
+                <span>1,350円</span>
+              </h2>
+
+              <ul>
+                <li>
+                  プレーンスコーン2個＋フルーツスコーン2個
+                </li>
+
+                <li>
+                  プレーンスコーン4個
+                </li>
+
+                <li>
+                  フルーツスコーン4個
+                </li>
+              </ul>
+
+              <p class="set-saving">
+                通常価格1,400円のところ、
+                セット価格1,350円です。
+              </p>
+            </article>
+
+            <article class="set-card">
+              <h2>
+                スコーン6個セット
+                <span>2,000円</span>
+              </h2>
+
+              <ul>
+                <li>
+                  プレーンスコーン3個＋フルーツスコーン3個
+                </li>
+
+                <li>
+                  プレーンスコーン6個
+                </li>
+
+                <li>
+                  フルーツスコーン6個
+                </li>
+              </ul>
+
+              <p class="set-saving">
+                通常価格2,100円のところ、
+                セット価格2,000円です。
+              </p>
+            </article>
+
+            <article class="set-card">
+              <h2>
+                英国菓子4個セット
+                <span>1,450円</span>
+              </h2>
+
+              <ul>
+                <li>
+                  プレーンスコーン2個＋
+                  レモンドリズルケーキ2個
+                </li>
+              </ul>
+
+              <p class="set-saving">
+                通常価格1,500円のところ、
+                セット価格1,450円です。
+              </p>
+            </article>
+
+            <article class="set-card">
+              <h2>
+                ティータイム4個セット
+                <span>2,050円</span>
+              </h2>
+
+              <p>
+                スコーン4個に、クロテッドクリーム1個と
+                ジャム1個が付いたセットです。
+              </p>
+
+              <ul>
+                <li>
+                  プレーンスコーン2個＋フルーツスコーン2個
+                </li>
+
+                <li>
+                  プレーンスコーン4個
+                </li>
+
+                <li>
+                  フルーツスコーン4個
+                </li>
+              </ul>
+
+              <p class="set-saving">
+                通常価格2,120円のところ、
+                セット価格2,050円です。
+              </p>
+            </article>
+
+            <article class="set-card">
+              <h2>
+                ティータイム6個セット
+                <span>2,700円</span>
+              </h2>
+
+              <p>
+                スコーン6個に、クロテッドクリーム1個と
+                ジャム1個が付いたセットです。
+              </p>
+
+              <ul>
+                <li>
+                  プレーンスコーン3個＋フルーツスコーン3個
+                </li>
+
+                <li>
+                  プレーンスコーン6個
+                </li>
+
+                <li>
+                  フルーツスコーン6個
+                </li>
+              </ul>
+
+              <p class="set-saving">
+                通常価格2,820円のところ、
+                セット価格2,700円です。
+              </p>
+            </article>
+          </div>
+
+          <div class="form-field set-select-field">
+            <label for="set-type">
+              ご希望のセット
+            </label>
+
+            <select
+              id="set-type"
+              name="土曜お取り置き限定セット"
+            >
+              <option value="">
+                セットを注文しない
+              </option>
+
+              <option value="Queen’s Bouquet 6個セット 2,800円">
+                Queen’s Bouquet 6個セット　2,800円
+              </option>
+
+              <option value="スコーン4個セット 1,350円">
+                スコーン4個セット　1,350円
+              </option>
+
+              <option value="スコーン6個セット 2,000円">
+                スコーン6個セット　2,000円
+              </option>
+
+              <option value="英国菓子4個セット 1,450円">
+                英国菓子4個セット　1,450円
+              </option>
+
+              <option value="ティータイム4個セット 2,050円">
+                ティータイム4個セット　2,050円
+              </option>
+
+              <option value="ティータイム6個セット 2,700円">
+                ティータイム6個セット　2,700円
+              </option>
+            </select>
+          </div>
+
+          <div
+            id="set-content-field"
+            class="form-field set-select-field"
+            hidden
           >
-        </div>
-
-        <div class="form-grid-two">
-          <div class="form-field contact-field">
-            <label for="phone">
-              お電話番号 <span>必須</span>
+            <label for="set-content">
+              セット内容
             </label>
 
-            <p
-              class="field-note field-note-spacer"
-              aria-hidden="true"
+            <select
+              id="set-content"
+              name="セット内容"
+              disabled
             >
-              &nbsp;
-            </p>
-
-            <input
-              id="phone"
-              name="お電話番号"
-              type="tel"
-              required
-              maxlength="20"
-              inputmode="tel"
-              autocomplete="tel"
-              placeholder="090-1234-5678"
-            >
+              <option value="">
+                セットを先に選択してください
+              </option>
+            </select>
           </div>
 
-          <div class="form-field contact-field">
-            <label for="email">
-              メールアドレス <span>必須</span>
-            </label>
+          <p
+            id="set-error"
+            class="form-error"
+            hidden
+          >
+            セット内容を選択してください。
+          </p>
+        </fieldset>
 
-            <p class="field-note">
-              完了の返信をお送りするため、正しくご入力ください。
-            </p>
-
-            <input
-              id="email"
-              name="メールアドレス"
-              type="email"
-              required
-              maxlength="120"
-              autocomplete="email"
-            >
-          </div>
-        </div>
-
-        <fieldset class="product-fieldset">
+        <!-- ② 単品 -->
+        <fieldset class="product-fieldset single-product-fieldset">
           <legend>
-            通常商品と個数
+            ② 単品
           </legend>
 
           <p class="field-note">
+            単品をご希望の場合は、
             各商品0〜4個で選択してください。
+          </p>
+
+          <p class="field-note">
+            セットのみをご注文の場合は、
+            すべて0個のままで構いません。
           </p>
 
           <div class="product-row">
@@ -323,322 +530,170 @@
           </div>
         </fieldset>
 
-        <fieldset class="product-fieldset set-fieldset">
-          <legend>
-            土曜お取り置きセット
-          </legend>
-
-          <p class="field-note set-intro-copy">
-            土曜日の店頭受け取り用に、お得なセットをご用意しています。
-            ご希望のセットと内容をお選びください。
-          </p>
-
-          <p class="reservation-important set-limit-note">
-            お取り置きは、おひとり様1セットまでです。
-          </p>
-
-          <div class="set-list">
-            <article class="set-card">
-              <h2>
-                Queen’s Bouquet 6個セット
-                <span>2,800円</span>
-              </h2>
-
-              <p>
-                焼き菓子6個に、クロテッドクリーム1個と
-                ジャム1個が付いたおすすめセットです。
-              </p>
-
-              <ul>
-                <li>
-                  プレーンスコーン2個＋フルーツスコーン2個＋
-                  レモンドリズルケーキ2個
-                </li>
-
-                <li>
-                  プレーンスコーン4個＋
-                  レモンドリズルケーキ2個
-                </li>
-
-                <li>
-                  フルーツスコーン4個＋
-                  レモンドリズルケーキ2個
-                </li>
-              </ul>
-
-              <p class="set-saving">
-                通常価格2,920円のところ、セット価格2,800円です。
-              </p>
-            </article>
-
-            <article class="set-card">
-              <h2>
-                スコーン4個セット
-                <span>1,350円</span>
-              </h2>
-
-              <ul>
-                <li>
-                  プレーンスコーン2個＋フルーツスコーン2個
-                </li>
-
-                <li>
-                  プレーンスコーン4個
-                </li>
-
-                <li>
-                  フルーツスコーン4個
-                </li>
-              </ul>
-
-              <p class="set-saving">
-                通常価格1,400円のところ、セット価格1,350円です。
-              </p>
-            </article>
-
-            <article class="set-card">
-              <h2>
-                スコーン6個セット
-                <span>2,000円</span>
-              </h2>
-
-              <ul>
-                <li>
-                  プレーンスコーン3個＋フルーツスコーン3個
-                </li>
-
-                <li>
-                  プレーンスコーン6個
-                </li>
-
-                <li>
-                  フルーツスコーン6個
-                </li>
-              </ul>
-
-              <p class="set-saving">
-                通常価格2,100円のところ、セット価格2,000円です。
-              </p>
-            </article>
-
-            <article class="set-card">
-              <h2>
-                英国菓子4個セット
-                <span>1,450円</span>
-              </h2>
-
-              <ul>
-                <li>
-                  プレーンスコーン2個＋
-                  レモンドリズルケーキ2個
-                </li>
-              </ul>
-
-              <p class="set-saving">
-                通常価格1,500円のところ、セット価格1,450円です。
-              </p>
-            </article>
-
-            <article class="set-card">
-              <h2>
-                ティータイム4個セット
-                <span>2,050円</span>
-              </h2>
-
-              <p>
-                スコーン4個に、クロテッドクリーム1個と
-                ジャム1個が付いたセットです。
-              </p>
-
-              <ul>
-                <li>
-                  プレーンスコーン2個＋フルーツスコーン2個
-                </li>
-
-                <li>
-                  プレーンスコーン4個
-                </li>
-
-                <li>
-                  フルーツスコーン4個
-                </li>
-              </ul>
-
-              <p class="set-saving">
-                通常価格2,120円のところ、セット価格2,050円です。
-              </p>
-            </article>
-
-            <article class="set-card">
-              <h2>
-                ティータイム6個セット
-                <span>2,700円</span>
-              </h2>
-
-              <p>
-                スコーン6個に、クロテッドクリーム1個と
-                ジャム1個が付いたセットです。
-              </p>
-
-              <ul>
-                <li>
-                  プレーンスコーン3個＋フルーツスコーン3個
-                </li>
-
-                <li>
-                  プレーンスコーン6個
-                </li>
-
-                <li>
-                  フルーツスコーン6個
-                </li>
-              </ul>
-
-              <p class="set-saving">
-                通常価格2,820円のところ、セット価格2,700円です。
-              </p>
-            </article>
-          </div>
-
-          <div class="form-field set-select-field">
-            <label for="set-type">
-              ご希望のセット
-            </label>
-
-            <select
-              id="set-type"
-              name="土曜お取り置きセット"
-            >
-              <option value="">
-                セットを注文しない
-              </option>
-
-              <option value="Queen’s Bouquet 6個セット 2,800円">
-                Queen’s Bouquet 6個セット　2,800円
-              </option>
-
-              <option value="スコーン4個セット 1,350円">
-                スコーン4個セット　1,350円
-              </option>
-
-              <option value="スコーン6個セット 2,000円">
-                スコーン6個セット　2,000円
-              </option>
-
-              <option value="英国菓子4個セット 1,450円">
-                英国菓子4個セット　1,450円
-              </option>
-
-              <option value="ティータイム4個セット 2,050円">
-                ティータイム4個セット　2,050円
-              </option>
-
-              <option value="ティータイム6個セット 2,700円">
-                ティータイム6個セット　2,700円
-              </option>
-            </select>
-          </div>
-
-          <div
-            id="set-content-field"
-            class="form-field set-select-field"
-            hidden
-          >
-            <label for="set-content">
-              セット内容
-            </label>
-
-            <select
-              id="set-content"
-              name="セット内容"
-              disabled
-            >
-              <option value="">
-                セットを先に選択してください
-              </option>
-            </select>
-          </div>
-
-          <p
-            id="set-error"
-            class="form-error"
-            hidden
-          >
-            セット内容を選択してください。
-          </p>
-        </fieldset>
-
         <p
           id="product-error"
-          class="form-error"
+          class="form-error order-error"
           hidden
         >
-          通常商品または土曜お取り置きセットを
+          土曜お取り置き限定セット、または単品を
           1点以上お選びください。
         </p>
 
-        <div class="form-field">
-          <label for="visit-time">
-            ご来店時間の目安 <span>必須</span>
+        <!-- ③ お客様情報 -->
+        <fieldset class="customer-fieldset">
+          <legend>
+            ③ お客様情報
+          </legend>
+
+          <div class="form-field">
+            <label for="customer-name">
+              お名前 <span>必須</span>
+            </label>
+
+            <p class="field-note">
+              ニックネームでも構いません。
+            </p>
+
+            <input
+              id="customer-name"
+              name="お名前"
+              type="text"
+              required
+              maxlength="60"
+              autocomplete="name"
+            >
+          </div>
+
+          <div class="form-grid-two">
+            <div class="form-field contact-field">
+              <label for="phone">
+                お電話番号 <span>必須</span>
+              </label>
+
+              <p
+                class="field-note field-note-spacer"
+                aria-hidden="true"
+              >
+                &nbsp;
+              </p>
+
+              <input
+                id="phone"
+                name="お電話番号"
+                type="tel"
+                required
+                maxlength="20"
+                inputmode="tel"
+                autocomplete="tel"
+                placeholder="090-1234-5678"
+              >
+            </div>
+
+            <div class="form-field contact-field">
+              <label for="email">
+                メールアドレス <span>必須</span>
+              </label>
+
+              <p class="field-note">
+                受付確認の自動返信と、
+                店舗からの返信をお送りします。
+              </p>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                maxlength="120"
+                autocomplete="email"
+              >
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="visit-time">
+              ご来店時間の目安 <span>必須</span>
+            </label>
+
+            <select
+              id="visit-time"
+              name="ご来店時間の目安"
+              required
+            >
+              <option value="">
+                選択してください
+              </option>
+
+              <option>11:00〜12:00頃</option>
+              <option>12:00〜13:00頃</option>
+              <option>13:00〜14:00頃</option>
+              <option>14:00〜15:00頃</option>
+              <option>15:00〜16:00頃</option>
+              <option>16:00〜17:00頃</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="message">
+              ご連絡事項 <small>任意</small>
+            </label>
+
+            <textarea
+              id="message"
+              name="ご連絡事項"
+              rows="4"
+              maxlength="500"
+              placeholder="ご質問や連絡事項があればご入力ください。"
+            ></textarea>
+          </div>
+
+          <div class="auto-reply-note">
+            <strong>
+              送信後のメールについて
+            </strong>
+
+            <p>
+              フォーム送信後、ご入力いただいたメールアドレスへ
+              受付確認の自動返信メールをお送りします。
+            </p>
+
+            <p>
+              自動返信メールの時点では、
+              お取り置きは確定しておりません。
+            </p>
+
+            <p>
+              店舗からの返信をもって、
+              お取り置き完了となります。
+            </p>
+          </div>
+
+          <label class="consent-row">
+            <input
+              id="consent-checkbox"
+              type="checkbox"
+              required
+            >
+
+            <span>
+              入力内容を確認し、店舗からの返信をもって
+              お取り置き完了となることに同意します。
+            </span>
           </label>
 
-          <select
-            id="visit-time"
-            name="ご来店時間の目安"
-            required
+          <button
+            class="button reservation-submit"
+            type="submit"
+            disabled
           >
-            <option value="">
-              選択してください
-            </option>
+            お取り置きを申し込む
+          </button>
 
-            <option>11:00〜12:00頃</option>
-            <option>12:00〜13:00頃</option>
-            <option>13:00〜14:00頃</option>
-            <option>14:00〜15:00頃</option>
-            <option>15:00〜16:00頃</option>
-            <option>16:00〜17:00頃</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="message">
-            ご連絡事項 <small>任意</small>
-          </label>
-
-          <textarea
-            id="message"
-            name="ご連絡事項"
-            rows="4"
-            maxlength="500"
-            placeholder="ご質問や連絡事項があればご入力ください。"
-          ></textarea>
-        </div>
-
-        <label class="consent-row">
-          <input
-            id="consent-checkbox"
-            type="checkbox"
-            required
-          >
-
-          <span>
-            入力内容を確認し、店舗からの返信をもって
-            お取り置き完了となることに同意します。
-          </span>
-        </label>
-
-        <button
-          class="button reservation-submit"
-          type="submit"
-          disabled
-        >
-          お取り置きを申し込む
-        </button>
-
-        <p class="submit-note">
-          送信後、Queen’s Bouquetからの返信をお待ちください。
-          自動的にお取り置き完了とはなりません。
-        </p>
+          <p class="submit-note">
+            自動返信メールは受付確認です。
+            店舗からの返信をお待ちください。
+          </p>
+        </fieldset>
       </form>
     </section>
 

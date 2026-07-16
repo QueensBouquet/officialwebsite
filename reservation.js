@@ -76,6 +76,8 @@
   };
 
   productSelects.forEach((select) => {
+    select.innerHTML = '';
+
     const isSoldOut =
       soldOut[select.dataset.product];
 
@@ -95,17 +97,16 @@
 
       select.appendChild(option);
     }
-
-    if (isSoldOut) {
-      const currentLabel =
-        select.getAttribute('aria-label') || '';
-
-      select.setAttribute(
-        'aria-label',
-        `${currentLabel}（受付終了）`
-      );
-    }
   });
+
+  const getIndividualProductTotal = () => {
+    return productSelects.reduce(
+      (sum, select) => {
+        return sum + Number(select.value || 0);
+      },
+      0
+    );
+  };
 
   const resetSetContent = () => {
     setContentSelect.innerHTML = '';
@@ -118,6 +119,21 @@
       'セット内容を選択してください';
 
     setContentSelect.appendChild(firstOption);
+    setContentSelect.value = '';
+  };
+
+  const hasCompleteSetSelection = () => {
+    return Boolean(
+      setTypeSelect.value &&
+      setContentSelect.value
+    );
+  };
+
+  const hasValidOrder = () => {
+    return (
+      getIndividualProductTotal() > 0 ||
+      hasCompleteSetSelection()
+    );
   };
 
   const updateSetContent = () => {
@@ -129,7 +145,10 @@
     if (!selectedSet) {
       setContentField.hidden = true;
       setContentSelect.disabled = true;
+      setContentSelect.required = false;
       setError.hidden = true;
+
+      updateSubmitButton();
       return;
     }
 
@@ -148,31 +167,11 @@
 
     setContentField.hidden = false;
     setContentSelect.disabled = false;
+    setContentSelect.required = true;
+    setContentSelect.value = '';
 
-    if (choices.length === 1) {
-      setContentSelect.value = choices[0];
-    }
+    updateSubmitButton();
   };
-
-  setTypeSelect.addEventListener(
-    'change',
-    () => {
-      updateSetContent();
-      productError.hidden = true;
-    }
-  );
-
-  setContentSelect.addEventListener(
-    'change',
-    () => {
-      if (setContentSelect.value) {
-        setError.hidden = true;
-        productError.hidden = true;
-      }
-    }
-  );
-
-  updateSetContent();
 
   const nowInJapan = () => {
     return new Date(
@@ -193,7 +192,10 @@
       return false;
     }
 
-    if (day === 5 && hour >= 12) {
+    if (
+      day === 5 &&
+      hour >= 12
+    ) {
       return false;
     }
 
@@ -201,7 +203,8 @@
   };
 
   const nextSaturday = (date) => {
-    const result = new Date(date);
+    const result =
+      new Date(date);
 
     const daysUntilSaturday =
       (6 - result.getDay() + 7) % 7;
@@ -226,15 +229,21 @@
   const targetSaturday =
     nextSaturday(current);
 
-  const updateSubmitButton = () => {
+  function updateSubmitButton() {
     if (!receptionIsOpen) {
       submitButton.disabled = true;
       return;
     }
 
+    const orderIsValid =
+      hasValidOrder();
+
+    const consentIsChecked =
+      consentCheckbox.checked;
+
     submitButton.disabled =
-      !consentCheckbox.checked;
-  };
+      !(orderIsValid && consentIsChecked);
+  }
 
   if (receptionIsOpen) {
     statusBox.className =
@@ -262,21 +271,46 @@
     submitButton.disabled = true;
   }
 
+  setTypeSelect.addEventListener(
+    'change',
+    () => {
+      updateSetContent();
+
+      if (setTypeSelect.value) {
+        productError.hidden = true;
+      }
+    }
+  );
+
+  setContentSelect.addEventListener(
+    'change',
+    () => {
+      if (setContentSelect.value) {
+        setError.hidden = true;
+        productError.hidden = true;
+      }
+
+      updateSubmitButton();
+    }
+  );
+
+  productSelects.forEach((select) => {
+    select.addEventListener(
+      'change',
+      () => {
+        if (getIndividualProductTotal() > 0) {
+          productError.hidden = true;
+        }
+
+        updateSubmitButton();
+      }
+    );
+  });
+
   consentCheckbox.addEventListener(
     'change',
     updateSubmitButton
   );
-
-  updateSubmitButton();
-
-  const getIndividualProductTotal = () => {
-    return productSelects.reduce(
-      (sum, select) => {
-        return sum + Number(select.value || 0);
-      },
-      0
-    );
-  };
 
   form.addEventListener(
     'submit',
@@ -284,25 +318,33 @@
       const individualTotal =
         getIndividualProductTotal();
 
-      const hasSet =
-        Boolean(setTypeSelect.value);
+      const selectedSet =
+        setTypeSelect.value;
 
-      if (!individualTotal && !hasSet) {
+      const selectedSetContent =
+        setContentSelect.value;
+
+      if (
+        individualTotal === 0 &&
+        !selectedSet
+      ) {
         event.preventDefault();
 
         productError.hidden = false;
-        productSelects[0].focus();
+        setError.hidden = true;
+        setTypeSelect.focus();
 
         return;
       }
 
       if (
-        hasSet &&
-        !setContentSelect.value
+        selectedSet &&
+        !selectedSetContent
       ) {
         event.preventDefault();
 
         setError.hidden = false;
+        productError.hidden = true;
         setContentSelect.focus();
 
         return;
@@ -311,6 +353,7 @@
       if (!consentCheckbox.checked) {
         event.preventDefault();
         consentCheckbox.focus();
+
         return;
       }
 
@@ -323,20 +366,10 @@
     }
   );
 
-  productSelects.forEach((select) => {
-    select.addEventListener(
-      'change',
-      () => {
-        const individualTotal =
-          getIndividualProductTotal();
+  resetSetContent();
+  setContentField.hidden = true;
+  setContentSelect.disabled = true;
+  setContentSelect.required = false;
 
-        if (
-          individualTotal > 0 ||
-          setTypeSelect.value
-        ) {
-          productError.hidden = true;
-        }
-      }
-    );
-  });
+  updateSubmitButton();
 })();
