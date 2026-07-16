@@ -569,3 +569,106 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
     display: none !important;
   }
 }
+/* 土曜お取り置きセット */
+.set-fieldset {
+  margin-top: 54px;
+  padding-top: 46px;
+  border-top: 1px solid rgba(116, 67, 34, .22);
+}
+
+.set-fieldset > legend {
+  font-size: clamp(25px, 3vw, 36px);
+  color: var(--ink);
+}
+
+.set-intro-copy {
+  max-width: 720px;
+  margin-bottom: 18px;
+  line-height: 2;
+}
+
+.set-limit-note {
+  margin: 0 0 30px;
+  padding: 13px 16px;
+  background: rgba(183, 131, 78, .08);
+  border-left: 3px solid var(--gold);
+}
+
+.set-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin: 30px 0 38px;
+}
+
+.set-card {
+  padding: 25px 24px;
+  background: rgba(255, 255, 255, .82);
+  border: 1px solid rgba(116, 67, 34, .14);
+}
+
+.set-card h2 {
+  margin-bottom: 14px;
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.set-card h2 span {
+  display: block;
+  margin-top: 4px;
+  color: var(--gold);
+  font-size: 17px;
+}
+
+.set-card p {
+  margin: 10px 0;
+  color: #6e4b3d;
+  font-size: 14px;
+}
+
+.set-card ul {
+  margin: 14px 0;
+  padding-left: 1.4em;
+}
+
+.set-card li {
+  margin: 8px 0;
+  color: #5f3d31;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.set-card .set-saving {
+  margin-top: 16px;
+  color: var(--brown);
+  font-weight: 600;
+}
+
+.set-select-field {
+  margin-bottom: 22px;
+  padding: 24px;
+  background: rgba(183, 131, 78, .07);
+  border: 1px solid rgba(116, 67, 34, .14);
+}
+
+.set-select-field label {
+  margin-bottom: 12px;
+}
+
+.set-select-field[hidden] {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .set-list {
+    grid-template-columns: 1fr;
+  }
+
+  .set-card {
+    padding: 22px 18px;
+  }
+
+  .set-select-field {
+    padding: 20px 16px;
+  }
+}

@@ -5,40 +5,93 @@
     return;
   }
 
-  const statusBox = document.getElementById('reservation-status');
-  const submitButton = form.querySelector('.reservation-submit');
-  const consentCheckbox = document.getElementById('consent-checkbox');
-  const productError = document.getElementById('product-error');
+  const statusBox =
+    document.getElementById('reservation-status');
+
+  const submitButton =
+    form.querySelector('.reservation-submit');
+
+  const consentCheckbox =
+    document.getElementById('consent-checkbox');
+
+  const productError =
+    document.getElementById('product-error');
+
+  const setError =
+    document.getElementById('set-error');
+
+  const setTypeSelect =
+    document.getElementById('set-type');
+
+  const setContentField =
+    document.getElementById('set-content-field');
+
+  const setContentSelect =
+    document.getElementById('set-content');
+
   const productSelects = [
     ...form.querySelectorAll('[data-product]')
   ];
 
-  /*
-   * 店舗側で商品を受付終了にする場合は、
-   * falseをtrueへ変更してください。
-   */
   const soldOut = {
     plain: false,
     lemon: false,
     fruit: false
   };
 
-  /*
-   * 商品のプルダウンを0〜4個で作成します。
-   */
+  const setChoices = {
+    "Queen’s Bouquet 6個セット 2,800円": [
+      "プレーンスコーン2個＋フルーツスコーン2個＋レモンドリズルケーキ2個",
+      "プレーンスコーン4個＋レモンドリズルケーキ2個",
+      "フルーツスコーン4個＋レモンドリズルケーキ2個"
+    ],
+
+    "スコーン4個セット 1,350円": [
+      "プレーンスコーン2個＋フルーツスコーン2個",
+      "プレーンスコーン4個",
+      "フルーツスコーン4個"
+    ],
+
+    "スコーン6個セット 2,000円": [
+      "プレーンスコーン3個＋フルーツスコーン3個",
+      "プレーンスコーン6個",
+      "フルーツスコーン6個"
+    ],
+
+    "英国菓子4個セット 1,450円": [
+      "プレーンスコーン2個＋レモンドリズルケーキ2個"
+    ],
+
+    "ティータイム4個セット 2,050円": [
+      "プレーンスコーン2個＋フルーツスコーン2個",
+      "プレーンスコーン4個",
+      "フルーツスコーン4個"
+    ],
+
+    "ティータイム6個セット 2,700円": [
+      "プレーンスコーン3個＋フルーツスコーン3個",
+      "プレーンスコーン6個",
+      "フルーツスコーン6個"
+    ]
+  };
+
   productSelects.forEach((select) => {
-    const isSoldOut = soldOut[select.dataset.product];
+    const isSoldOut =
+      soldOut[select.dataset.product];
 
     for (let i = 0; i <= 4; i += 1) {
-      const option = document.createElement('option');
+      const option =
+        document.createElement('option');
 
       option.value = String(i);
+
       option.textContent =
         isSoldOut && i > 0
           ? `${i}（受付終了）`
           : String(i);
 
-      option.disabled = isSoldOut && i > 0;
+      option.disabled =
+        isSoldOut && i > 0;
 
       select.appendChild(option);
     }
@@ -54,21 +107,84 @@
     }
   });
 
-  /*
-   * 日本時間を取得します。
-   */
+  const resetSetContent = () => {
+    setContentSelect.innerHTML = '';
+
+    const firstOption =
+      document.createElement('option');
+
+    firstOption.value = '';
+    firstOption.textContent =
+      'セット内容を選択してください';
+
+    setContentSelect.appendChild(firstOption);
+  };
+
+  const updateSetContent = () => {
+    const selectedSet =
+      setTypeSelect.value;
+
+    resetSetContent();
+
+    if (!selectedSet) {
+      setContentField.hidden = true;
+      setContentSelect.disabled = true;
+      setError.hidden = true;
+      return;
+    }
+
+    const choices =
+      setChoices[selectedSet] || [];
+
+    choices.forEach((choice) => {
+      const option =
+        document.createElement('option');
+
+      option.value = choice;
+      option.textContent = choice;
+
+      setContentSelect.appendChild(option);
+    });
+
+    setContentField.hidden = false;
+    setContentSelect.disabled = false;
+
+    if (choices.length === 1) {
+      setContentSelect.value = choices[0];
+    }
+  };
+
+  setTypeSelect.addEventListener(
+    'change',
+    () => {
+      updateSetContent();
+      productError.hidden = true;
+    }
+  );
+
+  setContentSelect.addEventListener(
+    'change',
+    () => {
+      if (setContentSelect.value) {
+        setError.hidden = true;
+        productError.hidden = true;
+      }
+    }
+  );
+
+  updateSetContent();
+
   const nowInJapan = () => {
     return new Date(
-      new Date().toLocaleString('en-US', {
-        timeZone: 'Asia/Tokyo'
-      })
+      new Date().toLocaleString(
+        'en-US',
+        {
+          timeZone: 'Asia/Tokyo'
+        }
+      )
     );
   };
 
-  /*
-   * 日曜日0:00〜金曜日11:59まで受付します。
-   * 金曜日12:00以降と土曜日は受付終了です。
-   */
   const isWithinReceptionHours = (date) => {
     const day = date.getDay();
     const hour = date.getHours();
@@ -84,11 +200,9 @@
     return true;
   };
 
-  /*
-   * 次の土曜日を取得します。
-   */
   const nextSaturday = (date) => {
     const result = new Date(date);
+
     const daysUntilSaturday =
       (6 - result.getDay() + 7) % 7;
 
@@ -103,16 +217,15 @@
     return `${date.getMonth() + 1}月${date.getDate()}日（土）`;
   };
 
-  const current = nowInJapan();
+  const current =
+    nowInJapan();
+
   const receptionIsOpen =
     isWithinReceptionHours(current);
+
   const targetSaturday =
     nextSaturday(current);
 
-  /*
-   * 同意チェックの状態に合わせて
-   * 送信ボタンを有効・無効にします。
-   */
   const updateSubmitButton = () => {
     if (!receptionIsOpen) {
       submitButton.disabled = true;
@@ -123,9 +236,6 @@
       !consentCheckbox.checked;
   };
 
-  /*
-   * 受付中・受付終了の表示を切り替えます。
-   */
   if (receptionIsOpen) {
     statusBox.className =
       'reservation-status is-open';
@@ -152,10 +262,6 @@
     submitButton.disabled = true;
   }
 
-  /*
-   * チェックを入れたときだけ
-   * 送信ボタンを押せるようにします。
-   */
   consentCheckbox.addEventListener(
     'change',
     updateSubmitButton
@@ -163,54 +269,74 @@
 
   updateSubmitButton();
 
-  /*
-   * 送信時に商品が1点以上選ばれているか確認します。
-   */
-  form.addEventListener('submit', (event) => {
-    const total = productSelects.reduce(
+  const getIndividualProductTotal = () => {
+    return productSelects.reduce(
       (sum, select) => {
         return sum + Number(select.value || 0);
       },
       0
     );
+  };
 
-    if (total < 1) {
-      event.preventDefault();
+  form.addEventListener(
+    'submit',
+    (event) => {
+      const individualTotal =
+        getIndividualProductTotal();
 
-      productError.hidden = false;
-      productSelects[0].focus();
+      const hasSet =
+        Boolean(setTypeSelect.value);
 
-      return;
-    }
+      if (!individualTotal && !hasSet) {
+        event.preventDefault();
 
-    if (!consentCheckbox.checked) {
-      event.preventDefault();
+        productError.hidden = false;
+        productSelects[0].focus();
 
-      consentCheckbox.focus();
-
-      return;
-    }
-
-    productError.hidden = true;
-    submitButton.disabled = true;
-    submitButton.textContent = '送信中です…';
-  });
-
-  /*
-   * 商品を選んだらエラー表示を消します。
-   */
-  productSelects.forEach((select) => {
-    select.addEventListener('change', () => {
-      const total = productSelects.reduce(
-        (sum, item) => {
-          return sum + Number(item.value || 0);
-        },
-        0
-      );
-
-      if (total > 0) {
-        productError.hidden = true;
+        return;
       }
-    });
+
+      if (
+        hasSet &&
+        !setContentSelect.value
+      ) {
+        event.preventDefault();
+
+        setError.hidden = false;
+        setContentSelect.focus();
+
+        return;
+      }
+
+      if (!consentCheckbox.checked) {
+        event.preventDefault();
+        consentCheckbox.focus();
+        return;
+      }
+
+      productError.hidden = true;
+      setError.hidden = true;
+
+      submitButton.disabled = true;
+      submitButton.textContent =
+        '送信中です…';
+    }
+  );
+
+  productSelects.forEach((select) => {
+    select.addEventListener(
+      'change',
+      () => {
+        const individualTotal =
+          getIndividualProductTotal();
+
+        if (
+          individualTotal > 0 ||
+          setTypeSelect.value
+        ) {
+          productError.hidden = true;
+        }
+      }
+    );
   });
 })();
