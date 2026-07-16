@@ -2459,3 +2459,29 @@ business-days-deadline-in-box-style.css
 .business-cards-final .business-method-box:first-child {
   min-height: 220px;
 }
+/* ネット予約と店頭販売のボックス重なりを修正 */
+.business-card-content {
+  grid-template-rows: auto auto;
+  gap: 14px;
+}
+
+.business-method-box {
+  height: auto;
+  min-height: 210px;
+}
+
+.business-card-content .business-method-box:first-child {
+  min-height: 250px;
+}
+
+.business-card-content .business-method-box:nth-child(2) {
+  min-height: 190px;
+}
+
+.business-box-deadline {
+  margin: 0 0 14px !important;
+}
+
+.business-method-box p:last-child {
+  margin-bottom: 0;
+}
