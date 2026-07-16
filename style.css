@@ -2213,3 +2213,249 @@ business-days-equal-boxes-style.css
 .business-cards-three .business-method-block:first-child p + p {
   margin-top: 12px;
 }
+ライブラリ
+/
+business-days-image-match-style.css
+
+
+/* ========================================
+   営業日ページ 最終デザイン
+   style.cssの一番下へ追加
+======================================== */
+
+.business-page-final {
+  padding-top: 78px;
+}
+
+.business-lead-final {
+  max-width: none;
+  white-space: nowrap;
+}
+
+.business-overview-final {
+  max-width: 760px;
+}
+
+.business-overview-final p {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 16px;
+  align-items: center;
+  text-align: left;
+  border-radius: 999px;
+}
+
+.business-overview-final strong {
+  text-align: center;
+}
+
+.business-cards-final {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1180px;
+  align-items: stretch;
+}
+
+.business-card-final {
+  display: grid;
+  grid-template-rows: 210px 1fr auto;
+  min-height: 760px;
+  padding: 34px 24px 28px;
+}
+
+.business-card-heading {
+  text-align: center;
+}
+
+.business-card-heading .business-day {
+  margin-bottom: 12px;
+}
+
+.business-card-heading h2 {
+  margin-bottom: 18px;
+}
+
+.business-type-final {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.business-card-content {
+  display: grid;
+  grid-template-rows: 190px 190px auto;
+  gap: 14px;
+}
+
+.business-method-box {
+  min-height: 190px;
+  padding: 22px 18px;
+  border: 1px solid rgba(116, 67, 34, .14);
+  background: rgba(183, 131, 78, .055);
+  text-align: left;
+}
+
+.business-method-box strong {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--brown);
+  font-size: 17px;
+}
+
+.business-method-box p {
+  margin: 0;
+  color: #6e4b3d;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.business-method-box p + p {
+  margin-top: 12px;
+}
+
+.business-method-note {
+  color: #7c6257 !important;
+  font-size: 12px !important;
+}
+
+.business-deadline-final {
+  margin: 4px 0 0;
+  text-align: center;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.business-card-buttons {
+  display: grid;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.business-card-buttons .button {
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+}
+
+@media (max-width: 1050px) {
+  .business-lead-final {
+    white-space: normal;
+  }
+
+  .business-cards-final {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .business-card-final {
+    grid-template-rows: auto auto auto;
+    min-height: auto;
+  }
+
+  .business-card-content {
+    grid-template-rows: auto auto auto;
+  }
+
+  .business-type-final {
+    white-space: normal;
+  }
+
+  .business-method-box {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .business-overview-final p {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    text-align: center;
+    border-radius: 22px;
+  }
+}
+/* ========================================
+   店舗情報を横幅いっぱいにし、
+   マップをその下へ配置
+======================================== */
+
+.shop-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 42px;
+  align-items: stretch;
+}
+
+.info-card {
+  width: 100%;
+  max-width: none;
+}
+
+.map-panel {
+  width: 100%;
+  min-height: 460px;
+}
+
+.map-panel iframe {
+  width: 100%;
+  min-height: 460px;
+  border-radius: 20px;
+}
+
+/* 店舗情報内の項目を横に広く使う */
+.shop-details > div {
+  grid-template-columns: 120px minmax(0, 1fr);
+}
+
+/* ボタンも横幅を生かして整列 */
+.info-actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 720px;
+}
+
+/* スマホ表示 */
+@media (max-width: 700px) {
+  .shop-info {
+    gap: 28px;
+  }
+
+  .shop-details > div {
+    grid-template-columns: 82px minmax(0, 1fr);
+  }
+
+  .info-actions {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .map-panel,
+  .map-panel iframe {
+    min-height: 320px;
+  }
+
+  .map-panel iframe {
+    border-radius: 14px;
+  }
+}
+ライブラリ
+/
+business-days-deadline-in-box-style.css
+
+
+/* ネット予約ボックス内の締切表示 */
+.business-box-deadline {
+  margin: -4px 0 14px !important;
+  color: var(--gold) !important;
+  font-size: 13px !important;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-align: left;
+}
+
+/* 3曜日のネット予約ボックスを同じ高さに保つ */
+.business-cards-final .business-method-box:first-child {
+  min-height: 220px;
+}
