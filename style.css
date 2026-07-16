@@ -845,3 +845,188 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
     min-width: 0;
   }
 }
+
+/* ========================================
+   営業日ページ：金・土・日の3日表示
+   style.cssの一番下へ追加
+======================================== */
+
+.business-overview-three {
+  max-width: 760px;
+}
+
+.business-cards-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 1180px;
+  align-items: stretch;
+}
+
+.business-cards-three .business-card {
+  min-height: 560px;
+  justify-content: flex-start;
+}
+
+.business-card-saturday {
+  border-color: rgba(183, 131, 78, .34);
+  box-shadow: 0 18px 42px rgba(76, 43, 26, .11);
+}
+
+.business-tag-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 0;
+}
+
+.business-tag-list span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 76px;
+  padding: 7px 13px;
+  border: 1px solid rgba(183, 131, 78, .28);
+  border-radius: 999px;
+  background: rgba(183, 131, 78, .08);
+  color: var(--brown);
+  font-size: 13px;
+}
+
+.business-attention {
+  margin: 18px 0 0;
+  padding: 13px 14px;
+  border-left: 3px solid var(--gold);
+  background: rgba(183, 131, 78, .08);
+  color: #694638;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.business-deadline {
+  margin: 18px 0 0;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.business-cards-three .business-card > .button {
+  width: 100%;
+  margin-top: auto;
+}
+
+.saturday-use-box {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+  text-align: left;
+}
+
+.saturday-use-box > div {
+  padding: 16px;
+  border: 1px solid rgba(116, 67, 34, .13);
+  background: rgba(183, 131, 78, .06);
+}
+
+.saturday-use-box strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--brown);
+}
+
+.saturday-use-box p {
+  margin: 0;
+  color: #694638;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.business-card-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.business-card-actions .button {
+  width: 100%;
+  margin: 0;
+  padding-inline: 14px;
+}
+
+.business-guide {
+  max-width: 1080px;
+  margin-top: 42px;
+  padding: clamp(34px, 6vw, 62px);
+  border: 1px solid rgba(116, 67, 34, .14);
+  background: rgba(255, 255, 255, .88);
+  text-align: center;
+  box-shadow: 0 14px 34px rgba(76, 43, 26, .07);
+}
+
+.business-guide-heading h2 {
+  margin-bottom: 30px;
+  font-size: clamp(29px, 4vw, 46px);
+}
+
+.business-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  text-align: left;
+}
+
+.business-guide-grid > div {
+  padding: 24px;
+  border: 1px solid rgba(116, 67, 34, .13);
+  background: rgba(183, 131, 78, .06);
+}
+
+.business-guide-grid strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--brown);
+  font-size: 17px;
+}
+
+.business-guide-grid p {
+  margin: 0;
+  color: #694638;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.business-guide-note {
+  margin: 24px 0 20px;
+  color: #765446;
+  font-size: 13px;
+}
+
+.business-guide > .button {
+  min-width: min(100%, 320px);
+}
+
+@media (max-width: 1050px) {
+  .business-cards-three {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .business-cards-three .business-card {
+    min-height: auto;
+  }
+
+  .business-cards-three .business-card > .button,
+  .business-card-actions {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  .business-guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-guide {
+    padding: 30px 20px;
+  }
+}
