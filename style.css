@@ -320,7 +320,7 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
 @media (max-width: 560px) {
   body { line-height: 1.8; }
 
-  /* スマホではメインバナー全体を画面幅に収めて表示 */
+  /* スマホではメインバナー全体を画面幅に収める */
   .hero { overflow: hidden; }
   .hero img {
     width: 100%;
@@ -330,13 +330,14 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
     display: block;
   }
 
-  .section-shell { width: min(100% - 28px, 1180px); }
+.section-shell { width: min(100% - 28px, 1180px); }
 
   .intro { padding-block: 70px; gap: 48px; }
   .intro-actions { flex-direction: column; align-items: flex-start; }
   .intro-actions .button { width: 100%; }
   .decor { opacity: .82; }
 
+  
   .shop-info { padding-block: 70px; }
   .info-card { padding: 30px 22px; }
   .info-actions { grid-template-columns: 1fr; }
@@ -347,6 +348,9 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
 
   .fortune-card { grid-template-columns: 1fr; gap: 16px; }
   .fortune-icon { width: 58px; height: 58px; font-size: 25px; }
+
+  /* 占い見出しに重なる右側の花を非表示 */
+  .fortune-section .fi-16 { display: none !important; }
 }
 
 .shop-pos-1a, .shop-pos-7 { display: none !important; }
@@ -563,198 +567,7 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
   .product-row { grid-template-columns: 1fr 105px; gap: 14px; }
   .hold-form { padding: 28px 20px; }
 }
-/* スマホでは占い見出しに重なる右側の花を非表示 */
-@media (max-width: 560px) {
-  .fortune-section .fi-16 {
-    display: none !important;
-  }
-}
-/* 土曜お取り置きセット */
-.set-fieldset {
-  margin-top: 54px;
-  padding-top: 46px;
-  border-top: 1px solid rgba(116, 67, 34, .22);
-}
 
-.set-fieldset > legend {
-  font-size: clamp(25px, 3vw, 36px);
-  color: var(--ink);
-}
-
-.set-intro-copy {
-  max-width: 720px;
-  margin-bottom: 18px;
-  line-height: 2;
-}
-
-.set-limit-note {
-  margin: 0 0 30px;
-  padding: 13px 16px;
-  background: rgba(183, 131, 78, .08);
-  border-left: 3px solid var(--gold);
-}
-
-.set-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-  margin: 30px 0 38px;
-}
-
-.set-card {
-  padding: 25px 24px;
-  background: rgba(255, 255, 255, .82);
-  border: 1px solid rgba(116, 67, 34, .14);
-}
-
-.set-card h2 {
-  margin-bottom: 14px;
-  font-size: 20px;
-  line-height: 1.55;
-}
-
-.set-card h2 span {
-  display: block;
-  margin-top: 4px;
-  color: var(--gold);
-  font-size: 17px;
-}
-
-.set-card p {
-  margin: 10px 0;
-  color: #6e4b3d;
-  font-size: 14px;
-}
-
-.set-card ul {
-  margin: 14px 0;
-  padding-left: 1.4em;
-}
-
-.set-card li {
-  margin: 8px 0;
-  color: #5f3d31;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.set-card .set-saving {
-  margin-top: 16px;
-  color: var(--brown);
-  font-weight: 600;
-}
-
-.set-select-field {
-  margin-bottom: 22px;
-  padding: 24px;
-  background: rgba(183, 131, 78, .07);
-  border: 1px solid rgba(116, 67, 34, .14);
-}
-
-.set-select-field label {
-  margin-bottom: 12px;
-}
-
-.set-select-field[hidden] {
-  display: none;
-}
-
-@media (max-width: 700px) {
-  .set-list {
-    grid-template-columns: 1fr;
-  }
-
-  .set-card {
-    padding: 22px 18px;
-  }
-
-  .set-select-field {
-    padding: 20px 16px;
-  }
-}
-/* お取り置きフォームの番号付き構成 */
-.set-fieldset,
-.single-product-fieldset,
-.customer-fieldset {
-  margin: 0 0 56px;
-  padding: 42px 0 0;
-  border: 0;
-  border-top: 1px solid rgba(116, 67, 34, .22);
-}
-
-.set-fieldset > legend,
-.single-product-fieldset > legend,
-.customer-fieldset > legend {
-  padding: 0;
-  color: var(--ink);
-  font-size: clamp(25px, 3vw, 36px);
-  font-weight: 600;
-}
-
-.set-exclusive-note {
-  margin: 25px 0;
-  padding: 22px 24px;
-  border-left: 4px solid var(--gold);
-  background: rgba(183, 131, 78, .09);
-}
-
-.set-exclusive-note strong {
-  display: block;
-  margin-bottom: 10px;
-  color: var(--brown);
-  font-size: 18px;
-}
-
-.set-exclusive-note p {
-  margin: 5px 0;
-  color: #694638;
-  line-height: 1.85;
-}
-
-.customer-fieldset .form-field:first-of-type {
-  margin-top: 26px;
-}
-
-.auto-reply-note {
-  margin: 30px 0;
-  padding: 22px 24px;
-  border: 1px solid rgba(116, 67, 34, .16);
-  background: rgba(255, 255, 255, .72);
-}
-
-.auto-reply-note strong {
-  display: block;
-  margin-bottom: 9px;
-  color: var(--brown);
-}
-
-.auto-reply-note p {
-  margin: 5px 0;
-  color: #6e4b3d;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.order-error {
-  margin: -25px 0 42px;
-  padding: 14px 16px;
-  background: rgba(154, 63, 52, .07);
-  border-left: 3px solid #9a3f34;
-}
-
-@media (max-width: 700px) {
-  .set-fieldset,
-  .single-product-fieldset,
-  .customer-fieldset {
-    margin-bottom: 44px;
-    padding-top: 34px;
-  }
-
-  .set-exclusive-note,
-  .auto-reply-note {
-    padding: 19px 17px;
-  }
-}
 /* ========================================
    土曜限定セット案内ページ
 ======================================== */
@@ -860,13 +673,6 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
   line-height: 1.5;
 }
 
-.set-card-description {
-  margin: 20px 0 0;
-  color: #694638;
-  font-size: 14px;
-  line-height: 1.9;
-}
-
 .set-price {
   display: grid;
   gap: 7px;
@@ -889,6 +695,14 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
   color: var(--brown);
   font-size: clamp(18px, 2vw, 22px);
   line-height: 1.5;
+}
+
+.set-card-description {
+  min-height: 0;
+  margin: 18px 0 0;
+  color: #694638;
+  font-size: 14px;
+  line-height: 1.9;
 }
 
 .set-contents {
@@ -1030,42 +844,4 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
     width: 100%;
     min-width: 0;
   }
-}
-/* セットカードの価格位置をそろえる */
-.reservation-set-card {
-  display: grid;
-  grid-template-rows:
-    auto
-    minmax(84px, auto)
-    auto
-    1fr;
-}
-
-.reservation-set-heading {
-  min-height: 150px;
-}
-
-.set-card-description {
-  margin-top: 20px;
-}
-
-.reservation-set-card > .set-price {
-  align-self: start;
-}
-/* セットカードの価格位置をそろえる */
-.reservation-set-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.reservation-set-heading {
-  min-height: 150px;
-}
-
-.set-card-description {
-  min-height: 84px;
-}
-
-.reservation-set-card .set-price {
-  margin-top: 24px;
 }
