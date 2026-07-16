@@ -16,6 +16,36 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* このページ専用：PCでセット名と価格位置をそろえる */
+    @media (min-width: 851px) {
+      .reservation-set-heading {
+        min-height: 118px;
+      }
+
+      .reservation-set-card h2 {
+        font-size: clamp(22px, 2.15vw, 32px);
+        white-space: nowrap;
+      }
+
+      .reservation-set-card .queens-set-title {
+        font-size: clamp(20px, 1.9vw, 29px);
+        letter-spacing: -.015em;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .reservation-set-heading {
+        min-height: 0;
+      }
+
+      .reservation-set-card h2,
+      .reservation-set-card .queens-set-title {
+        white-space: normal;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -117,10 +147,11 @@
       </div>
 
       <div class="set-catalog-grid">
+        <!-- 1段目 左：Queen’s Bouquet 6個セット -->
         <article class="reservation-set-card reveal">
           <div class="reservation-set-heading">
             <p class="set-card-number">SET 01</p>
-            <h2>Queen’s Bouquet<br>6個セット</h2>
+            <h2 class="queens-set-title">Queen’s Bouquet 6個セット</h2>
           </div>
 
           <div class="set-price">
@@ -150,51 +181,10 @@
           </div>
         </article>
 
+        <!-- 1段目 右：英国菓子4個セット -->
         <article class="reservation-set-card reveal">
           <div class="reservation-set-heading">
             <p class="set-card-number">SET 02</p>
-            <h2>スコーン4個セット</h2>
-          </div>
-
-          <div class="set-price">
-            <span class="single-total">単品合計 1,400円</span>
-            <strong>セット価格 1,350円（税込）</strong>
-          </div>
-
-          <div class="set-contents">
-            <p class="set-contents-title">下記よりお選びいただけます</p>
-            <ul>
-              <li>プレーンスコーン2個＋フルーツスコーン2個</li>
-              <li>プレーンスコーン4個</li>
-              <li>フルーツスコーン4個</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="reservation-set-card reveal">
-          <div class="reservation-set-heading">
-            <p class="set-card-number">SET 03</p>
-            <h2>スコーン6個セット</h2>
-          </div>
-
-          <div class="set-price">
-            <span class="single-total">単品合計 2,100円</span>
-            <strong>セット価格 2,000円（税込）</strong>
-          </div>
-
-          <div class="set-contents">
-            <p class="set-contents-title">下記よりお選びいただけます</p>
-            <ul>
-              <li>プレーンスコーン3個＋フルーツスコーン3個</li>
-              <li>プレーンスコーン6個</li>
-              <li>フルーツスコーン6個</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="reservation-set-card reveal">
-          <div class="reservation-set-heading">
-            <p class="set-card-number">SET 04</p>
             <h2>英国菓子4個セット</h2>
           </div>
 
@@ -216,21 +206,39 @@
           </div>
         </article>
 
+        <!-- 2段目 左：スコーン6個セット -->
         <article class="reservation-set-card reveal">
           <div class="reservation-set-heading">
-            <p class="set-card-number">SET 05</p>
-            <h2>ティータイム4個セット</h2>
+            <p class="set-card-number">SET 03</p>
+            <h2>スコーン6個セット</h2>
           </div>
 
           <div class="set-price">
-            <span class="single-total">単品合計 2,150円</span>
-            <strong>セット価格 2,050円（税込）</strong>
+            <span class="single-total">単品合計 2,100円</span>
+            <strong>セット価格 2,000円（税込）</strong>
           </div>
 
-          <p class="set-card-description">
-            スコーン4個に、クロテッドクリーム1個と
-            ジャム1個が付いたセットです。
-          </p>
+          <div class="set-contents">
+            <p class="set-contents-title">下記よりお選びいただけます</p>
+            <ul>
+              <li>プレーンスコーン3個＋フルーツスコーン3個</li>
+              <li>プレーンスコーン6個</li>
+              <li>フルーツスコーン6個</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 2段目 右：スコーン4個セット -->
+        <article class="reservation-set-card reveal">
+          <div class="reservation-set-heading">
+            <p class="set-card-number">SET 04</p>
+            <h2>スコーン4個セット</h2>
+          </div>
+
+          <div class="set-price">
+            <span class="single-total">単品合計 1,400円</span>
+            <strong>セット価格 1,350円（税込）</strong>
+          </div>
 
           <div class="set-contents">
             <p class="set-contents-title">下記よりお選びいただけます</p>
@@ -242,9 +250,10 @@
           </div>
         </article>
 
+        <!-- 3段目 左：ティータイム6個セット -->
         <article class="reservation-set-card reveal">
           <div class="reservation-set-heading">
-            <p class="set-card-number">SET 06</p>
+            <p class="set-card-number">SET 05</p>
             <h2>ティータイム6個セット</h2>
           </div>
 
@@ -264,6 +273,33 @@
               <li>プレーンスコーン3個＋フルーツスコーン3個</li>
               <li>プレーンスコーン6個</li>
               <li>フルーツスコーン6個</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 3段目 右：ティータイム4個セット -->
+        <article class="reservation-set-card reveal">
+          <div class="reservation-set-heading">
+            <p class="set-card-number">SET 06</p>
+            <h2>ティータイム4個セット</h2>
+          </div>
+
+          <div class="set-price">
+            <span class="single-total">単品合計 2,150円</span>
+            <strong>セット価格 2,050円（税込）</strong>
+          </div>
+
+          <p class="set-card-description">
+            スコーン4個に、クロテッドクリーム1個と
+            ジャム1個が付いたセットです。
+          </p>
+
+          <div class="set-contents">
+            <p class="set-contents-title">下記よりお選びいただけます</p>
+            <ul>
+              <li>プレーンスコーン2個＋フルーツスコーン2個</li>
+              <li>プレーンスコーン4個</li>
+              <li>フルーツスコーン4個</li>
             </ul>
           </div>
         </article>
