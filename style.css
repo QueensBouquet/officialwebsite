@@ -1031,3 +1031,41 @@ footer > p { margin: 4px 0; font-family: "Cormorant Garamond", serif; font-size:
     min-width: 0;
   }
 }
+/* セットカードの価格位置をそろえる */
+.reservation-set-card {
+  display: grid;
+  grid-template-rows:
+    auto
+    minmax(84px, auto)
+    auto
+    1fr;
+}
+
+.reservation-set-heading {
+  min-height: 150px;
+}
+
+.set-card-description {
+  margin-top: 20px;
+}
+
+.reservation-set-card > .set-price {
+  align-self: start;
+}
+/* セットカードの価格位置をそろえる */
+.reservation-set-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.reservation-set-heading {
+  min-height: 150px;
+}
+
+.set-card-description {
+  min-height: 84px;
+}
+
+.reservation-set-card .set-price {
+  margin-top: 24px;
+}
