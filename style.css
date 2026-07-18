@@ -180,6 +180,7 @@ dd { margin: 0; font-size: 15px; color: #5f3d31; }
 .schedule-line { display: block; }
 .schedule-line + .schedule-line { margin-top: 5px; }
 .schedule-line strong { display: inline-block; min-width: 48px; color: var(--ink); font-weight: 600; }
+.schedule-line-detail { display: block; padding-left: 48px; }
 .temporary-note {
   margin: 20px 0 0;
   padding: 13px 15px;
